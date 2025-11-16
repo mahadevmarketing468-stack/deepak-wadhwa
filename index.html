@@ -233,7 +233,7 @@
 
           <div class="timer-container">
             <p class="timer-heading">🔥 Limited Spots Filling Fast! Redirecting in:</p>
-            <div id="countdown-timer">00:05</div>
+            <div id="countdown-timer">00:10</div>
           </div>
           
           <div class="button-group">
@@ -268,12 +268,16 @@
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Redirect logic
+            setTimeout(() => {
+                window.location.href = 'https://t.me/+gywo5-bLI7VhYzNl';
+            }, 10000);
+
+            // Countdown timer logic
             const countdownElement = document.getElementById('countdown-timer');
-            let timeInSeconds = 5; // Sets countdown to 5 seconds
+            let timeInSeconds = 10;
 
             function updateTimer() {
-                if (timeInSeconds < 0) return;
-
                 const minutes = Math.floor(timeInSeconds / 60);
                 const seconds = timeInSeconds % 60;
 
@@ -284,21 +288,17 @@
 
                 if (timeInSeconds <= 0) {
                     clearInterval(timerInterval);
-                    // Redirect when timer hits zero for synchronization
-                    window.location.href = 'https://t.me/+P7-OQoDWo1BlZDll';
                 } else {
                     timeInSeconds--;
                 }
             }
-            
-            // Sets the timer to update every 1 second (1000ms)
+
             const timerInterval = setInterval(updateTimer, 1000);
-            
-            // Initial call to display timer immediately without a 1-second delay
-            updateTimer();
+            updateTimer(); // Initial call to display timer immediately
         });
     </script>
 </body>
 </html>
+
 
 
